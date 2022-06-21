@@ -2,6 +2,8 @@ package uz.jl.dao;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import uz.jl.domains.User;
+import uz.jl.enums.Role;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 public class DAO<T> {
 
     protected Gson gson = new Gson();
+    public static User session = null;
     @SuppressWarnings("unchecked")
     private final Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass()
             .getGenericSuperclass())
