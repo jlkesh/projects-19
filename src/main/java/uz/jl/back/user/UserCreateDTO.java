@@ -1,7 +1,6 @@
-package uz.jl.dto.user;
+package uz.jl.back.user;
 
 import lombok.*;
-import uz.jl.enums.Language;
 
 @Setter
 @Getter

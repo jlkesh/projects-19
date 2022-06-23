@@ -1,4 +1,4 @@
-package uz.jl.config;
+package uz.jl.back.config;
 
 import org.mindrot.jbcrypt.BCrypt;
 

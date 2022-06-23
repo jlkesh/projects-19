@@ -1,4 +1,4 @@
-package uz.jl.domains;
+package uz.jl.back.domains;
 
 
 import lombok.*;
@@ -9,9 +9,9 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 @ToString
-public class QuizQuestion {
+public class Answer {
     private long id;
+    private String answerBody;
     private String questionId;
-    private String quizId;
     private boolean correct;
 }

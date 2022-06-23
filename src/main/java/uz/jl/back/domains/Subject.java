@@ -1,4 +1,4 @@
-package uz.jl.domains;
+package uz.jl.back.domains;
 
 import lombok.*;
 

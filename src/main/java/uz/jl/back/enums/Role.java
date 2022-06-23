@@ -1,4 +1,4 @@
-package uz.jl.enums;
+package uz.jl.back.enums;
 
 public enum Role {
 ADMIN, USER

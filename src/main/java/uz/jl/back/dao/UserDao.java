@@ -1,6 +1,6 @@
-package uz.jl.dao;
+package uz.jl.back.dao;
 
-import uz.jl.domains.User;
+import uz.jl.back.domains.User;
 
 import java.util.List;
 import java.util.Optional;

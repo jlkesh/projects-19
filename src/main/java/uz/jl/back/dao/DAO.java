@@ -1,4 +1,4 @@
-package uz.jl.dao;
+package uz.jl.back.dao;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -14,20 +14,20 @@ import java.util.stream.Collectors;
 public class DAO<T> {
 
     protected Gson gson = new Gson();
+
     @SuppressWarnings("unchecked")
     private final Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass()
             .getGenericSuperclass())
-
             .getActualTypeArguments()[0];
-    protected final List<T> generic_list = load();
+    protected final List<T> generic_list = load(entityClass);
 
-    private List<T> load() {
-        String fileName = entityClass.getSimpleName().toLowerCase();
+    private List<T> load(Class<T> clazz) {
+        String fileName = clazz.getSimpleName().toLowerCase();
+
         try (FileReader fileReader = new FileReader("src/main/resources/%s.json".formatted(fileName));
              BufferedReader bufferedReader = new BufferedReader(fileReader)) {
             String jsonSTRING = bufferedReader.lines().collect(Collectors.joining());
-            return gson.fromJson(jsonSTRING, new TypeToken<>() {
-            }.getType());
+            return gson.fromJson(jsonSTRING, TypeToken.getParameterized(List.class, clazz).getType());
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }

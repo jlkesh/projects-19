@@ -1,8 +1,8 @@
-package uz.jl.domains;
+package uz.jl.back.domains;
 
 import lombok.*;
-import uz.jl.enums.Language;
-import uz.jl.enums.Role;
+import uz.jl.back.enums.Language;
+import uz.jl.back.enums.Role;
 
 @Setter
 @Getter
