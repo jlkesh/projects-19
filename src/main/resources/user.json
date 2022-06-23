@@ -1,16 +1,10 @@
 [
   {
-    "id": 1.65580714846E12,
-    "username": "jlkesh",
-    "password": "$2a$12$mRNt0oXBqe15C.719llPH.IP3j293ML7ctD7oP5kZQGm/LxI4UQfW",
+    "id": 1655985244686,
+    "username": "john",
+    "password": "$2a$12$IHnhirBH9yQfCxK.KdeOmOz9a1XHbqLyK59PPCh4lZyzbxIcOAzJa",
     "language": "RU",
-    "active": false
-  },
-  {
-    "id": 1655810604352,
-    "username": "a",
-    "password": "$2a$12$8bCB9G1Nhz6Rvpe6nuLH0uFlyKXP6N7SLbVg8hOg4Tn6YzSJGf72i",
-    "language": "UZ",
-    "active": false
+    "active": true,
+    "role": "USER"
   }
 ]

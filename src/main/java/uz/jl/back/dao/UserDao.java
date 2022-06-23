@@ -17,13 +17,16 @@ public class UserDao extends DAO<User> {
         return generic_list;
     }
 
-    public  Optional<User> findByUsername(String username) {
+    public Optional<User> findByUsername(String username) {
         return generic_list.stream()
                 .filter(user -> user.getUsername().equalsIgnoreCase(username))
                 .findFirst();
     }
 
 
-
-
+    public Optional<User> findById(Long id) {
+        return generic_list.stream()
+                .filter(user -> user.getId() == id)
+                .findFirst();
+    }
 }

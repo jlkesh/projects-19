@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +20,11 @@ public class DAO<T> {
     private final Class<T> entityClass = (Class<T>) ((ParameterizedType) getClass()
             .getGenericSuperclass())
             .getActualTypeArguments()[0];
-    protected final List<T> generic_list = load(entityClass);
+    protected List<T> generic_list = new ArrayList<>();
+
+    protected DAO() {
+        this.generic_list = load(entityClass);
+    }
 
     private List<T> load(Class<T> clazz) {
         String fileName = clazz.getSimpleName().toLowerCase();
@@ -36,7 +41,7 @@ public class DAO<T> {
     public void persist() {
         String fileName = entityClass.getSimpleName().toLowerCase();
         try (FileWriter fileWriter = new FileWriter("src/main/resources/%s.json".formatted(fileName))) {
-            fileWriter.write(gson.toJson(generic_list));
+            fileWriter.write(gson.toJson(this.generic_list));
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }
